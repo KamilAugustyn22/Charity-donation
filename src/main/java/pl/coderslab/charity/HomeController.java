@@ -28,6 +28,9 @@ public class HomeController {
         for(Donation d : allDonations){
             bagCounter += d.getQuantity();
         }
+        long giftCounter = allDonations.size();
+
+        model.addAttribute("numberOfGifts", giftCounter);
         model.addAttribute("numberOfBags", bagCounter);
         model.addAttribute("institutions", institutionRepository.findAll());
         return "index";
