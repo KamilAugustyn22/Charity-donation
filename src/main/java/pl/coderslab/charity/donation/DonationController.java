@@ -27,16 +27,8 @@ public class DonationController {
         model.addAttribute("donation", new Donation());
         List<Category> categories = categoryRepository.findAll();
         List<Institution> institutions = institutionRepository.findAll();
-        List<String> catNames = new ArrayList<>();
-        List<String> instNames = new ArrayList<>();
-//        for(Category c : categories){
-//            catNames.add(c.getName());
-//        }
-        for(Institution i : institutions){
-            instNames.add(i.getName());
-        }
         model.addAttribute("categories",categories);
-        model.addAttribute("institutions",instNames);
+        model.addAttribute("institutions",institutions);
         return "donationForm";
     }
     @PostMapping("/donate")
