@@ -93,11 +93,12 @@
                     <div class="title">${institutions[counter.index].getName()}"</div>
                     <div class="subtitle">Cel i misja: ${institutions[counter.index].getDescription()}</div>
                 </div>
-
+            <c:if test="${counter.index+1 < institutions.size()}">
                 <div class="col">
                     <div class="title">${institutions[counter.index+1].getName()}</div>
                     <div class="subtitle">Cel i misja: ${institutions[counter.index+1].getDescription()}</div>
                 </div>
+            </c:if>
             </li>
             </c:forEach>
 

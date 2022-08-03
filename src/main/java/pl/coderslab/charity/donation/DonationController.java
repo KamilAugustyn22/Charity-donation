@@ -29,13 +29,13 @@ public class DonationController {
         List<Institution> institutions = institutionRepository.findAll();
         List<String> catNames = new ArrayList<>();
         List<String> instNames = new ArrayList<>();
-        for(Category c : categories){
-            catNames.add(c.getName());
-        }
+//        for(Category c : categories){
+//            catNames.add(c.getName());
+//        }
         for(Institution i : institutions){
             instNames.add(i.getName());
         }
-        model.addAttribute("categories",catNames);
+        model.addAttribute("categories",categories);
         model.addAttribute("institutions",instNames);
         return "donationForm";
     }
