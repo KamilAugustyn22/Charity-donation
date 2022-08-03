@@ -9,17 +9,18 @@ import pl.coderslab.charity.category.CategoryRepository;
 import pl.coderslab.charity.institution.Institution;
 import pl.coderslab.charity.institution.InstitutionRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class DonationController {
     private final CategoryRepository categoryRepository;
     private final InstitutionRepository institutionRepository;
+    private final DonationRepository donationRepository;
 
-    public DonationController(CategoryRepository categoryRepository, InstitutionRepository institutionRepository) {
+    public DonationController(CategoryRepository categoryRepository, InstitutionRepository institutionRepository, DonationRepository donationRepository) {
         this.categoryRepository = categoryRepository;
         this.institutionRepository = institutionRepository;
+        this.donationRepository = donationRepository;
     }
 
     @GetMapping("/donate")
@@ -32,7 +33,8 @@ public class DonationController {
         return "donationForm";
     }
     @PostMapping("/donate")
-    public String donationForm(){
-        return "";
+    public String donationForm(Donation donation){
+        donationRepository.save(donation);
+        return "donationConfirm";
     }
 }

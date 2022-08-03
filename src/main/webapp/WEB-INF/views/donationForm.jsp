@@ -95,18 +95,18 @@
       <!-- STEP 1: class .active is switching steps -->
       <div data-step="1" class="active">
         <h3>Zaznacz co chcesz oddać:</h3>
-<!-- tu poczatek petli -->
+
         <c:forEach items="${categories}" var="category">
         <div class="form-group form-group--checkbox">
           <label>
             <form:input path="categories"/>
             <span class="checkbox"></span>
             <span class="description"
-            >${category.getName()}</span><!-- name -->
+            >${category.getName()}</span>
           </label>
         </div>
         </c:forEach>
-        <!-- tu koniec -->
+
         <div class="form-group form-group--buttons">
           <button type="button" class="btn next-step">Dalej</button>
         </div>
