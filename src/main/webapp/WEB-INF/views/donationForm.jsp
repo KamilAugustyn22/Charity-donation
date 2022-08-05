@@ -99,7 +99,7 @@
         <c:forEach items="${categoriesList}" var="cat">
         <div class="form-group form-group--checkbox">
           <label>
-            <form:checkbox path="categories" value="${cat}"/>
+            <form:checkbox path="categories" value="${cat}" class="categoriesInput"/>
             <span class="checkbox"></span>
             <span class="description"
             >${cat.getName()}</span>
@@ -118,7 +118,7 @@
 
         <div class="form-group form-group--inline">
             Liczba 60l worków:
-            <form:input type="number" path="quantity"/>
+            <form:input type="number" path="quantity" id="quantityInput"/>
         </div>
 
         <div class="form-group form-group--buttons">
@@ -136,7 +136,7 @@
         <c:forEach items="${institutions}" var="institution">
         <div class="form-group form-group--checkbox">
           <label>
-            <form:radiobutton path="institution" value="${institution.getId()}" class="institution"/>
+            <form:radiobutton path="institution" value="${institution}" class="institution" name="${institution.getName()}"/>
             <span class="checkbox radio"></span>
             <span class="description">
                   <div class="title">${institution.getName()}</div>
@@ -162,7 +162,7 @@
           <div class="form-section--column">
             <h4>Adres odbioru</h4>
             <div class="form-group form-group--inline">
-              <label path="street">Ulica <form:input path="street"/></label>
+              <label>Ulica <form:input path="street" id="streetInput"/></label>
             </div>
 
             <div class="form-group form-group--inline">
@@ -171,7 +171,7 @@
 
             <div class="form-group form-group--inline">
               <label>
-                Kod pocztowy <form:input path="zipCode" />
+                Kod pocztowy <form:input path="zipCode" id="zipCodeInput"/>
               </label>
             </div>
 
@@ -180,17 +180,17 @@
           <div class="form-section--column">
             <h4>Termin odbioru</h4>
             <div class="form-group form-group--inline">
-              <label> Data <form:input type="date" path="pickUpDate" /> </label>
+              <label> Data <form:input type="date" path="pickUpDate" id="pickUpDateInput"/> </label>
             </div>
 
             <div class="form-group form-group--inline">
-              <label> Godzina <form:input type="time" path="pickUpTime"/> </label>
+              <label> Godzina <form:input type="time" path="pickUpTime" id="pickUpTimeInput"/> </label>
             </div>
 
             <div class="form-group form-group--inline">
               <label>
                 Uwagi dla kuriera
-                <form:textarea path="pickUpComment" rows="5"/>
+                <form:textarea path="pickUpComment" rows="5" id="pickUpCommInput"/>
               </label>
             </div>
           </div>
@@ -211,8 +211,9 @@
             <ul>
               <li>
                 <span class="icon icon-bag"></span>
-                <span class="summary--text" id="quantityAndCategory"
-                >4 worki ubrań w dobrym stanie dla dzieci</span
+                <span class="summary--text" id="quantity"
+                >4</span><span class="summary--text" id="category"
+                >ubrań w dobrym stanie dla dzieci</span
                 >
               </li>
 
@@ -238,9 +239,9 @@
             <div class="form-section--column">
               <h4>Termin odbioru:</h4>
               <ul>
-                <li id="date">13/12/2018</li>
-                <li id="time">15:40</li>
-                <li id="comment">Brak uwag</li>
+                <li id="pickUpDate">13/12/2018</li>
+                <li id="pickUpTime">15:40</li>
+                <li id="pickUpComm">Brak uwag</li>
               </ul>
             </div>
           </div>
