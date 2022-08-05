@@ -96,13 +96,13 @@
       <div data-step="1" class="active">
         <h3>Zaznacz co chcesz oddać:</h3>
 
-        <c:forEach items="${categories}" var="category">
+        <c:forEach items="${categoriesList}" var="cat">
         <div class="form-group form-group--checkbox">
           <label>
-            <form:input path="categories"/>
+            <form:checkbox path="categories" value="${cat}"/>
             <span class="checkbox"></span>
             <span class="description"
-            >${category.getName()}</span>
+            >${cat.getName()}</span>
           </label>
         </div>
         </c:forEach>
@@ -136,7 +136,7 @@
         <c:forEach items="${institutions}" var="institution">
         <div class="form-group form-group--checkbox">
           <label>
-            <form:radiobutton path="institution"/>
+            <form:radiobutton path="institution" value="${institution.getId()}" class="institution"/>
             <span class="checkbox radio"></span>
             <span class="description">
                   <div class="title">${institution.getName()}</div>
@@ -166,7 +166,7 @@
             </div>
 
             <div class="form-group form-group--inline">
-              <label> Miasto <form:input path="city" /> </label>
+              <label> Miasto <form:input path="city" id ="cityInput"/> </label>
             </div>
 
             <div class="form-group form-group--inline">

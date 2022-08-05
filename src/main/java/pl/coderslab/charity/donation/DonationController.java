@@ -28,7 +28,7 @@ public class DonationController {
         model.addAttribute("donation", new Donation());
         List<Category> categories = categoryRepository.findAll();
         List<Institution> institutions = institutionRepository.findAll();
-        model.addAttribute("categories",categories);
+        model.addAttribute("categoriesList",categories);
         model.addAttribute("institutions",institutions);
         return "donationForm";
     }
