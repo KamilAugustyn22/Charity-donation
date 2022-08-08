@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
       let quantitySumm = document.getElementById("quantity");
       quantitySumm.innerText = quantityInput + " worki ";
 
-      let institutionInput = document.querySelector(".institution:checked").value.name;
+      let institutionInput = document.querySelector(".institution:checked").value;
       let institutionSumm = document.getElementById("institution");
       institutionSumm.innerText = institutionInput;
 
