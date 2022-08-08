@@ -28,7 +28,7 @@
         </div>
 
         <div class="stats--item">
-            <em>5</em>
+            <em>${numberOfGifts}</em>
             <h3>Przekazanych darów</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas
                 quam.</p>
@@ -93,11 +93,12 @@
                     <div class="title">${institutions[counter.index].getName()}"</div>
                     <div class="subtitle">Cel i misja: ${institutions[counter.index].getDescription()}</div>
                 </div>
-
+            <c:if test="${counter.index+1 < institutions.size()}">
                 <div class="col">
                     <div class="title">${institutions[counter.index+1].getName()}</div>
                     <div class="subtitle">Cel i misja: ${institutions[counter.index+1].getDescription()}</div>
                 </div>
+            </c:if>
             </li>
             </c:forEach>
 
