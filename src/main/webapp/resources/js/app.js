@@ -164,6 +164,47 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+
+      let categoriesInput = document.querySelectorAll(".categoriesInput");
+
+      let quantityInput = document.getElementById("quantityInput") .value;
+      let quantitySumm = document.getElementById("quantity");
+      quantitySumm.innerText = quantityInput + " worki ";
+
+      let institutionInput = document.querySelector(".institution:checked").id;
+      let institutionSumm = document.getElementById("institution");
+      institutionSumm.innerText = institutionInput;
+
+
+
+      let streetInput = document.getElementById("streetInput").value;
+      let streetSumm = document.getElementById("street");
+      streetSumm.innerText = streetInput;
+
+      let cityInput = document.getElementById("cityInput") .value;
+      let citySumm = document.getElementById("city");
+      citySumm.innerText = cityInput;
+
+      let zipInput = document.getElementById("zipCodeInput").value;
+      let zipSumm = document.getElementById("zipCode");
+      zipSumm.innerText = zipInput;
+
+      let pickupDateInput = document.getElementById("pickUpDateInput").value;
+      let pickupDateSumm = document.getElementById("pickUpDate");
+      pickupDateSumm.innerText = pickupDateInput;
+
+      let pickupTimeInput = document.getElementById("pickUpTimeInput").value;
+      let pickupTimeSumm = document.getElementById("pickUpTime");
+      pickupTimeSumm.innerText = pickupTimeInput;
+
+      let pickupCommentInput = document.getElementById("pickUpCommInput").value;
+      let pickupCommentSumm = document.getElementById("pickUpComm");
+      if(pickupDateInput == null){
+        pickupCommentSumm.innerText = "Brak uwag";
+      }else{
+        pickupCommentSumm.innerText = pickupCommentInput;
+      }
+
     }
 
   }
