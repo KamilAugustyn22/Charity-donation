@@ -14,19 +14,18 @@ import pl.coderslab.charity.user.SpringDataUserDetailsService;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("user1").password("{noop}user123").roles("USER")
-                .and()
-                .withUser("admin1").password("{noop}admin123").roles("ADMIN");
+        auth.userDetailsService(customUserDetailsService()).passwordEncoder(passwordEncoder());
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/").permitAll()
                 .antMatchers("/donate").authenticated()
+                .antMatchers("/","/login").permitAll()
                 .and().formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/");
+        http.csrf().disable();
+        http.cors().disable();
     }
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){

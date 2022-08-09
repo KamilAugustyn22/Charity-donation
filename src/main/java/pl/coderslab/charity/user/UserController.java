@@ -1,6 +1,7 @@
 package pl.coderslab.charity.user;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -12,7 +13,8 @@ public class UserController {
         this.userService = userService;
     }
     @GetMapping("/register")
-    public String createUser(){
+    public String createUser(Model model){
+        model.addAttribute("user", new User());
         return "register";
     }
     @PostMapping("/register")

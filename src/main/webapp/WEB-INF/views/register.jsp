@@ -37,7 +37,7 @@
 
 <section class="login-page">
   <h2>Załóż konto</h2>
-  <form:form>
+  <form:form modelAttribute="user">
     <div class="form-group">
       <form:input type="text" path="username" placeholder="Nazwa użytkownika" />
     </div>
