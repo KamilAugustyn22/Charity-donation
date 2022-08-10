@@ -165,9 +165,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // TODO: get data from inputs and show them in summary
 
-      let categoriesInput = document.querySelectorAll(".categoriesInput");
+      let categoriesInput = document.querySelectorAll(".categories");
+      let categoriesSumm = document.getElementById("category");
+      for(let i = 0; i<categoriesInput.length; i++){
 
-      let quantityInput = document.getElementById("quantityInput") .value;
+        if(categoriesInput[i].checked){
+          categoriesSumm.innerText = " ";
+          categoriesSumm.innerText += categoriesInput[i].id;
+
+        }
+      }
+
+
+
+      let quantityInput = document.getElementById("quantityInput").value;
       let quantitySumm = document.getElementById("quantity");
       quantitySumm.innerText = quantityInput + " worki ";
 
