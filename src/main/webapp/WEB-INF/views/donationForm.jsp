@@ -99,7 +99,7 @@
         <c:forEach items="${categoriesList}" var="cat">
         <div class="form-group form-group--checkbox">
           <label>
-            <form:checkbox path="categories" value="${cat}" class="categoriesInput"/>
+            <form:checkbox path="categories" value="${cat}" class="categories" id="${cat.getName()}"/>
             <span class="checkbox"></span>
             <span class="description"
             >${cat.getName()}</span>
