@@ -167,10 +167,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
       let categoriesInput = document.querySelectorAll(".categories");
       let categoriesSumm = document.getElementById("category");
+      categoriesSumm.innerText = " ";
       for(let i = 0; i<categoriesInput.length; i++){
-
         if(categoriesInput[i].checked){
-          categoriesSumm.innerText = " ";
           categoriesSumm.innerText += categoriesInput[i].id;
 
         }
